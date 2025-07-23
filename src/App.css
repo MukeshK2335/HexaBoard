@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e6f0ff, #f8fbff); /* light blue gradient */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 2rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 51, 102, 0.15); /* soft dark blue tint */
+}
+
+.logo {
+  height: 4em;
+  margin-bottom: 1em;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1em #007bffaa); /* bright blue glow */
+}
+
+.card {
+  padding: 1em;
+}
+
+.read-the-docs {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo.react {
+    animation: none;
+  }
+}
+/* App.css */
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
