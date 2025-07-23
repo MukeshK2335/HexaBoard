@@ -2,24 +2,22 @@
 
 .login-container {
     width: 320px;
-    margin: 60px auto;
     padding: 25px;
     border: 2px solid #ccc;
     border-radius: 10px;
     background: #f9f9f9;
     font-family: 'Segoe UI', Arial, sans-serif;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.login-heading {
-    font-size: 30px; /* reduced from 26px */
-    font-weight: bold;
 
+.login-heading {
+    font-size: 30px;
+    font-weight: bold;
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
     letter-spacing: 0.5px;
     margin-bottom: 20px;
     text-align: center;
 }
-
 
 .tabs {
     display: flex;
