@@ -1,4 +1,3 @@
-/* App.css */
 body, html, #root {
   margin: 0;
   padding: 0;
@@ -6,15 +5,14 @@ body, html, #root {
   width: 100%;
 }
 
-/* App.css */
-
 .outer-box {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #dfe3ea; /* lighter than the login box */
-  padding: 20px;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  padding: 0;
+  overflow: hidden;
 }
 
 .inner-wrapper {
