@@ -17,9 +17,13 @@ import {
     LogOut,
     Home,
     FileText,
-    BarChart3
+    BarChart3,
+    GraduationCap,
+    Calendar,
+    ClipboardList
 } from 'lucide-react';
 import '../../Style/FresherDashboard.css';
+import FresherLearning from './FresherLearning';
 
 const FresherDashboard = () => {
     const [fresher, setFresher] = useState(null);
@@ -333,6 +337,27 @@ const FresherDashboard = () => {
                         Dashboard
                     </button>
                     <button 
+                        className={`nav-item ${activeTab === 'courses' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('courses')}
+                    >
+                        <GraduationCap size={20} />
+                        Courses
+                    </button>
+                    <button 
+                        className={`nav-item ${activeTab === 'schedule' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('schedule')}
+                    >
+                        <Calendar size={20} />
+                        Schedule
+                    </button>
+                    <button 
+                        className={`nav-item ${activeTab === 'assignments' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('assignments')}
+                    >
+                        <ClipboardList size={20} />
+                        Assignments
+                    </button>
+                    <button 
                         className={`nav-item ${activeTab === 'profile' ? 'active' : ''}`}
                         onClick={() => setActiveTab('profile')}
                     >
@@ -369,6 +394,9 @@ const FresherDashboard = () => {
 
                 <div className="content-area">
                     {activeTab === 'dashboard' && renderDashboard()}
+                    {activeTab === 'courses' && <FresherLearning />}
+                    {activeTab === 'schedule' && <div className="coming-soon">Schedule feature coming soon...</div>}
+                    {activeTab === 'assignments' && <div className="coming-soon">Assignments feature coming soon...</div>}
                     {activeTab === 'profile' && renderProfile()}
                     {activeTab === 'reports' && renderReports()}
                 </div>

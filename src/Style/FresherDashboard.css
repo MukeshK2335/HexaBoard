@@ -523,6 +523,18 @@
     font-weight: 500;
 }
 
+.coming-soon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background: white;
+    border-radius: 12px;
+    color: #64748b;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .fresher-dashboard {
