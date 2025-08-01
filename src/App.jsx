@@ -3,14 +3,13 @@ import RoleSwitcherLogin from './Components/Auth/RoleSwitcherLogin.jsx';
 import AdminDashboard from './Components/admin/AdminDashboard.jsx';
 import FresherDashboard from './Components/fresher/FresherDashboard.jsx';
 import ProtectedRoute from './Components/ProtectedRoute.jsx';
-import LandingPage from './Components/LandingPage.jsx'; // ✅ Import landing page
-import ViewFresherDashboard from './Components/fresher/ViewFresherDashboard.jsx';
+import LandingPage from './Components/LandingPage.jsx';
+import ViewFresherDashboard from './Components/fresher/ViewFresherDashboard.jsx'; // 👈 NEW component
 import './App.css';
 
 function App() {
     return (
         <Router>
-
             <Routes>
 
                 {/* ✅ Landing Page */}
@@ -25,18 +24,26 @@ function App() {
                     </div>
                 } />
 
-                {/* ✅ Admin Dashboard - Protected */}
+                {/* ✅ Admin Dashboard (Protected) */}
                 <Route path="/admin" element={
                     <ProtectedRoute>
                         <AdminDashboard />
                     </ProtectedRoute>
                 } />
 
-                {/* ✅ Fresher Dashboard - Temporarily without protection */}
-                <Route path="/fresher" element={<FresherDashboard />} />
+                {/* ✅ Fresher Dashboard (Logged-in Fresher only) */}
+                <Route path="/fresher" element={
+                    <ProtectedRoute>
+                        <FresherDashboard />
+                    </ProtectedRoute>
+                } />
 
-                {/* ✅ View Fresher Dashboard - Protected */}
-                <Route path="/admin/fresher/:id" element={<ViewFresherDashboard />} />
+                {/* ✅ Individual Fresher Dashboard (Admin viewing specific fresher by email) */}
+                <Route path="/fresher/:email" element={
+                    <ProtectedRoute>
+                        <ViewFresherDashboard />
+                    </ProtectedRoute>
+                } />
 
             </Routes>
         </Router>
