@@ -4,6 +4,8 @@ import '../../Style/AdminDashboard.css';
 import FresherSearch from './FresherSearch';
 import Reports from './Reports';
 import AgentStatus from './AgentStatus';
+import CourseManagement from './CourseManagement';
+import DepartmentManagement from './DepartmentManagement';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth, db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
@@ -159,6 +161,10 @@ const addFresher = async (fresher) => {
                 return <Reports />;
             case 'agent':
                 return <AgentStatus />;
+            case 'courses':
+                return <CourseManagement />;
+            case 'departments':
+                return <DepartmentManagement />;
             case 'settings':
                 return (
                     <section className="admin-settings">
@@ -228,6 +234,8 @@ const addFresher = async (fresher) => {
                         <li className={selectedTab === 'fresher' ? 'active' : ''} onClick={() => setSelectedTab('fresher')}>Fresher Search</li>
                         <li className={selectedTab === 'reports' ? 'active' : ''} onClick={() => setSelectedTab('reports')}>Reports</li>
                         <li className={selectedTab === 'agent' ? 'active' : ''} onClick={() => setSelectedTab('agent')}>Agent Status</li>
+                        <li className={selectedTab === 'courses' ? 'active' : ''} onClick={() => setSelectedTab('courses')}>Course Management</li>
+                        <li className={selectedTab === 'departments' ? 'active' : ''} onClick={() => setSelectedTab('departments')}>Department Management</li>
                         <li className={selectedTab === 'settings' ? 'active' : ''} onClick={() => setSelectedTab('settings')}>Settings</li>
                     </ul>
                 </nav>

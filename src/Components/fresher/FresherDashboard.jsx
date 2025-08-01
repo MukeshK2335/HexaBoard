@@ -6,6 +6,7 @@ import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import LoadingScreen from "../LoadingScreen.jsx";
+import MyCourses from "./MyCourses.jsx";
 
 // Helper to format Firestore Timestamp or string
 function formatDate(ts) {
@@ -582,7 +583,7 @@ const Dashboard = () => {
                             className={activeTab === 'courses' ? 'active' : ''} 
                             onClick={() => setActiveTab('courses')}
                         >
-                            Courses
+                            My Courses
                         </a>
                         <a href="#">Schedule</a>
                         <a href="#">Assignments</a>
@@ -605,7 +606,7 @@ const Dashboard = () => {
                         </div>
                     </header>
 
-                    {activeTab === 'dashboard' ? renderDashboard() : renderCourses()}
+                    {activeTab === 'dashboard' ? renderDashboard() : activeTab === 'courses' ? <MyCourses /> : renderCourses()}
                 </main>
             </div>
         </div>
